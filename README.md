@@ -68,6 +68,38 @@ Be careful about the font path (assets: ['./assets/Font'])
 npx react-native-asset
 ```
 You will get the message of successful link. 
+<br>
+4. But if you want to see the result, you need to build the app again that means to follow all steps of `Use own device as 'Emulator' via connected Wifi`
 
+
+### Use Native-Stack component
+
+<b>Error:</b> requireNativeComponent: "RNSScreenStackHeaderConfig" was not found in the UIManager when running android app
+
+<b>Solution:</b> (https://stackoverflow.com/questions/69043806/requirenativecomponent-rnsscreenstackheaderconfig-was-not-found-in-the-uimana)
+
+Solution have in documentation of [reactnavigation doc](https://reactnavigation.org/docs/getting-started)
+
+After install @react-navigation/native you have to install two dependency:
+```
+npm install react-native-screens react-native-safe-area-context
+```
+it's mention library.
+
+<b>NB:</b> react-native-screens package requires one additional configuration step to properly work on Android devices. Edit MainActivity.java file which is located in
+```
+android/app/src/main/java/<your package name>/MainActivity.java.
+```
+Add the following code to the body of MainActivity class:
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
+```
+and make sure to add an import statement at the top of this file:
+```java
+import android.os.Bundle;
+```
 
    
