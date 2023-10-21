@@ -41,6 +41,33 @@
    ```
    npx react-native start
    ```
+<br> 
+Video Tutorial: https://youtu.be/ulLllM9WQco?si=TYQR6YgfjqywEgYD
+
+### Using custom font 
+1. Download font from google font
+2. Then extract zip file and create a `/assets/Font` folder.
+   <br> Copy the all font to this folder.
+   <br> `link` command is not support to the updated version of react-native because now it supports auto-linking
+   <br> Now create a file in the project directory `react-native.config.js`
+   <br> Now copy these line in this file
    
+```js
+   module.exports = {
+    project: {
+        ios: {},
+        android: {}
+    },
+    assets: ['./assets/Font'],
+};
+```
+Be careful about the font path (assets: ['./assets/Font'])
+<br>
+3. Now run this command to the project directory. 
+```
+npx react-native-asset
+```
+You will get the message of successful link. 
+
 
    
