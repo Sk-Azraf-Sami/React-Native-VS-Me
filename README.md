@@ -102,4 +102,17 @@ and make sure to add an import statement at the top of this file:
 import android.os.Bundle;
 ```
 
+### React native vector icons won't show in android device
+<b>Link : </b>
+- https://www.npmjs.com/package/react-native-vector-icons
+- https://oblador.github.io/react-native-vector-icons/
+- [Solution](https://stackoverflow.com/questions/38878852/react-native-vector-icons-wont-show-in-android-device)
+  
+Open android/app/build.gradle and add the following:
+
+```gradle
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
+You can follow the instructions to properly install the module on Android: react-native-vector-icons#install-android
+
    
